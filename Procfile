@@ -1,1 +1,1 @@
-web: gunicorn easyBackend:app –log-file -
+web: gunicorn easybackend:app –log-file -
