@@ -33,8 +33,9 @@ def hello_world():
           "href":url,
           "content":content
       }
-      newsDict[media].append(dataDict)  
-  return newsDict
+      newsDict[media].append(dataDict)
+      str1 = json.dumps(newsDict,ensure_ascii=False) 
+  return str1
 
 
 if __name__=='__main__':
