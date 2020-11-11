@@ -30,13 +30,17 @@ def index():
         data ={
             "replyToken":replyToken,
             "messages":[
-                {
+            {
+                "type":"text",
+                "text":text
+            },
+            {
                 "type": "sticker",
                 "packageId": "1",
                 "stickerId": "1"
-                }
-            ]
-        }
+            }
+        ]
+    }
         url = 'https://api.line.me/v2/bot/message/reply'
         r = requests.post(url,headers=headers,data=json.dumps(data))
 
