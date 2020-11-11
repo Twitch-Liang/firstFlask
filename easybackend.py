@@ -14,6 +14,10 @@ def index():
         text = message.get('message').get('text')      
         print('text:',text)
 
+        if text == 'news' :
+            replyMessage ='googleNews'
+        else:
+            replyMessage ='let me training more'
 
 
 
@@ -32,7 +36,7 @@ def index():
             "messages":[
             {
                 "type":"text",
-                "text":text
+                "text":replyMessage
             },
             {
                 "type": "sticker",
