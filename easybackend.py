@@ -22,7 +22,7 @@ def index():
             else:
                 replyMessage =text
         elif messageType == 'sticker':
-            replyMessage ='stickers'
+            data['messages'][0]={"type": "sticker","packageId": "1","stickerId": "1"}
 
 
         ####################################################
@@ -37,7 +37,7 @@ def index():
             "replyToken":replyToken,
             "messages":[
             {
-                "type":"text",
+                "type":messageType,
                 "text":replyMessage
             }
         ]
