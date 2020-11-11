@@ -31,13 +31,13 @@ def index():
                 player = fist.index(text)
                 if ai == player:
                     replyMessage='電腦出'+fist[ai]+'，平手'
-                    replyData['messages'][0]['text'] = replyMessage
+                
                 elif (ai == 0 and player == 1) or (ai == 1 and player == 2) or (ai == 2 and player ==0):
                     replyMessage='電腦出'+fist[ai]+'，您贏了！'
-                    replyData['messages'][0]['text'] = replyMessage
+                
                 else:
                     replyMessage='電腦出'+fist[ai]+'，電腦獲勝！'
-                    replyData['messages'][0]['text'] = replyMessage
+                replyData['messages'][0]['text'] = replyMessage
             elif text == 'news' :
                 replyMessage ='googleNews'
                 replyData['messages'][0]['text'] = replyMessage
