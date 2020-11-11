@@ -1,5 +1,6 @@
 from flask import Flask,request
 import requests
+import json
 
 app = Flask(__name__)    
 
@@ -31,7 +32,7 @@ def index():
         ]
     }
         url = 'https://api.line.me/v2/bot/message/reply'
-        r = requests.post(url,headers=headers,data=data)
+        r = requests.post(url,headers=headers,data=json.dumps(data))
 
         ####################################################
 
