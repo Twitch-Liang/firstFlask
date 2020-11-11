@@ -19,10 +19,10 @@ def index():
 
             if text == 'news' :
                 replyMessage ='googleNews'
-                data['messages'][0]={"type": "sticker","text": replyMessage}
+                data['messages'][0]={"type": replyMessage ,"text": replyMessage}
             else:
                 replyMessage =text
-                data['messages'][0]={"type": "sticker","text": replyMessage}
+                data['messages'][0]={"type": replyMessage ,"text": replyMessage}
         elif messageType == 'sticker':
             data['messages'][0]={"type": "sticker","text": "1","stickerId": "1"}
 
@@ -38,9 +38,7 @@ def index():
         data ={
             "replyToken":replyToken,
             "messages":[
-            {
-                "type":messageType,
-            }
+            
         ]
     }
         url = 'https://api.line.me/v2/bot/message/reply'
