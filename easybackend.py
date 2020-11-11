@@ -23,16 +23,16 @@ def index():
 
             if text == 'news' :
                 replyMessage ='googleNews'
-                data['messages'][0]['type']=messageType
-                data['messages'][0]['text']=replyMessage
+                replyData['messages'][0]['type'] = messageType
+                replyData['messages'][0]['text'] = replyMessage
             else:
                 replyMessage = text
-                data['messages'][0]['type']=messageType
-                data['messages'][0]['text']=replyMessage
+                replyData['messages'][0]['type'] = messageType
+                replyData['messages'][0]['text'] = replyMessage
         elif messageType == 'sticker':
-            data['messages'][0]["type"]=messageType
-            data['messages'][0]["packageId"]='1'
-            data['messages'][0]["stickerId"]='1'
+            replyData['messages'][0]["type"] = messageType
+            replyData['messages'][0]["packageId"]='1'
+            replyData['messages'][0]["stickerId"]='1'
 
 
         ####################################################
