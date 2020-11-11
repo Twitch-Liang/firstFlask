@@ -23,6 +23,7 @@ def index():
             ]
         }
         if messageType == 'text':
+
             text = message.get('message').get('text')
             fist =['剪刀','石頭','布']
             if text in fist:
@@ -34,7 +35,7 @@ def index():
                     replyMessage='電腦出'+fist[ai]+'，您贏了！'
                 else:
                     replyMessage='電腦出'+fist[ai]+'，電腦獲勝！'
-            
+                replyData['messages'][0]['text'] = replyMessage
             if text == 'news' :
                 replyMessage ='googleNews'
                 replyData['messages'][0]['text'] = replyMessage
