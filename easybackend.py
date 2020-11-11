@@ -13,6 +13,10 @@ def index():
         replyToken = message.get('replyToken')      
         print('replyToken:',replyToken)
         messageType =message.get('message').get('type')
+        replyData={
+            "replyToken":replyToken,
+            "messages":[]
+        }
         if messageType == 'text':
             text = message.get('message').get('text')      
             print('text:',text)
@@ -39,12 +43,7 @@ def index():
             'Content-Type':'application/json',
             'Authorization':'Bearer '+accessToken
         }
-        data ={
-            "replyToken":replyToken,
-            "messages":[
-            
-        ]
-    }
+        data = replyData
         url = 'https://api.line.me/v2/bot/message/reply'
         r = requests.post(url,headers=headers,data=json.dumps(data))
 
