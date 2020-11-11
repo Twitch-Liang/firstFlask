@@ -37,13 +37,13 @@ def index():
                 
                 else:
                     replyMessage='電腦出'+fist[ai]+'，電腦獲勝！'
-                replyData['messages'][0]['text'] = replyMessage
+                
             elif text == 'news' :
                 replyMessage ='googleNews'
-                replyData['messages'][0]['text'] = replyMessage
+                
             else:
                 replyMessage = text
-                replyData['messages'][0]['text'] = replyMessage
+            replyData['messages'][0]['text'] = replyMessage
         elif messageType == 'sticker':
             replyData['messages'][0]["packageId"]='1'
             replyData['messages'][0]["stickerId"]='1'
