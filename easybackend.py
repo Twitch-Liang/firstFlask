@@ -32,8 +32,8 @@ def index():
             "messages":[
             {
                 "type":"text",
-                "text":text,
-                "type": "sticker",
+                "text":text},
+                {"type": "sticker",
                 "packageId": "1",
                 "stickerId": "1"
             }
