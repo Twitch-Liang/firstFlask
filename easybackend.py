@@ -5,6 +5,10 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
+        data = request.get_json()
+        print(data)
+
+        
         return "post"
     if request.method == 'GET':
         return "get"
