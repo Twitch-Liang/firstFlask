@@ -38,7 +38,7 @@ def index():
                 else:
                     replyMessage='電腦出'+fist[ai]+'，電腦獲勝！'
                     replyData['messages'][0]['text'] = replyMessage
-            if text == 'news' :
+            elif text == 'news' :
                 replyMessage ='googleNews'
                 replyData['messages'][0]['text'] = replyMessage
             else:
