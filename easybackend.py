@@ -1,4 +1,5 @@
 from flask import Flask,request
+from bs4 import BeautifulSoup
 import requests
 import json
 
@@ -11,16 +12,17 @@ def index():
         print(message) 
         replyToken = message.get('replyToken')      
         print('replyToken:',replyToken)
-        text = message.get('message').get('text')      
-        print('text:',text)
+        messageType =message.get('message').get('type')
+        if messageType == 'text':
+            text = message.get('message').get('text')      
+            print('text:',text)
 
-        if text == 'news' :
-            replyMessage ='googleNews'
-        else:
-            replyMessage ='let me training more'
-
-
-
+            if text == 'news' :
+                replyMessage ='googleNews'
+            else:
+                replyMessage =text
+        elif messageType == 'sticker':
+            replyMessage ='stickers'
 
 
         ####################################################
@@ -37,11 +39,6 @@ def index():
             {
                 "type":"text",
                 "text":replyMessage
-            },
-            {
-                "type": "sticker",
-                "packageId": "11537",
-                "stickerId": "52002749"
             }
         ]
     }
