@@ -7,8 +7,10 @@ def index():
     if request.method == 'POST':
         data = request.get_json()
         print(data)
+        print('replyToken:',data[0]['replyToken'])
+        print('text:',data[0]['message']['text'])
 
-        
+
         return "post"
     if request.method == 'GET':
         return "get"
