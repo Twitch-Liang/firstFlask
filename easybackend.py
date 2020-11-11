@@ -7,7 +7,9 @@ def index():
     if request.method == 'POST':
         data = request.get_json()
         print(data)
+        
         print('replyToken:',data['events'][0]['replyToken'])
+        
         print('text:',data['events'][0]['message']['text'])
 
 
