@@ -2,6 +2,7 @@ from flask import Flask,request
 from bs4 import BeautifulSoup
 import requests
 import json
+import random
 
 app = Flask(__name__)    
 
@@ -34,7 +35,16 @@ def index():
         elif messageType == 'sticker':
             replyData['messages'][0]["packageId"]='1'
             replyData['messages'][0]["stickerId"]='1'
-
+        fist =['剪刀','石頭','布']
+        if text in fist:
+            ai = random.randint(0,2)
+            player = fist.index(text)
+            if ai == player:
+                replyMessage='電腦出'+fist[ai]+'，平手'
+            elif (ai == 0 and player == 1) or (ai == 1 and player == 2) or (ai == 2 and player ==0):
+                replyMessage='電腦出'+fist[ai]+'，您贏了！'
+            else:
+                replyMessage='電腦出'+fist[ai]+'，電腦獲勝！'
 
         ####################################################
         ####################reply user######################
