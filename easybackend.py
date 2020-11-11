@@ -15,7 +15,11 @@ def index():
         messageType =message.get('message').get('type')
         replyData={
             "replyToken":replyToken,
-            "messages":[]
+            "messages":[
+                {
+                "type": messageType,
+                }
+            ]
         }
         if messageType == 'text':
             text = message.get('message').get('text')      
@@ -23,14 +27,11 @@ def index():
 
             if text == 'news' :
                 replyMessage ='googleNews'
-                replyData['messages'][0]['type'] = messageType
                 replyData['messages'][0]['text'] = replyMessage
             else:
                 replyMessage = text
-                replyData['messages'][0]['type'] = messageType
                 replyData['messages'][0]['text'] = replyMessage
         elif messageType == 'sticker':
-            replyData['messages'][0]["type"] = messageType
             replyData['messages'][0]["packageId"]='1'
             replyData['messages'][0]["stickerId"]='1'
 
