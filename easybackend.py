@@ -7,12 +7,17 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        message = request.get_json()
+        message = request.get_json().get['events'][0]
         print(message) 
-        replyToken = message['events'][0]['replyToken']      
+        replyToken = message.get('replyToken')      
         print('replyToken:',replyToken)
-        text = message['events'][0]['message']['text']      
+        text = message.get('message').get('text')      
         print('text:',text)
+
+
+
+
+
 
         ####################################################
         ####################reply user######################
@@ -27,7 +32,10 @@ def index():
             "messages":[
             {
                 "type":"text",
-                "text":text
+                "text":text,
+                "type": "sticker",
+                "packageId": "1",
+                "stickerId": "1"
             }
         ]
     }
