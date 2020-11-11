@@ -19,10 +19,12 @@ def index():
 
             if text == 'news' :
                 replyMessage ='googleNews'
+                data['messages'][0]={"type": "sticker","text": replyMessage}
             else:
                 replyMessage =text
+                data['messages'][0]={"type": "sticker","text": replyMessage}
         elif messageType == 'sticker':
-            data['messages'][0]={"type": "sticker","packageId": "1","stickerId": "1"}
+            data['messages'][0]={"type": "sticker","text": "1","stickerId": "1"}
 
 
         ####################################################
@@ -38,7 +40,6 @@ def index():
             "messages":[
             {
                 "type":messageType,
-                "text":replyMessage
             }
         ]
     }
