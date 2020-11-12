@@ -16,7 +16,7 @@ def index():
         messageType =message.get('message').get('type')
         if messageType == 'text':
             text = message.get('message').get('text')
-            print('text:'text)
+            print('text:',text)
             fist =['剪刀','石頭','布']
             if text in fist:
                 ai = random.randint(0,2)
