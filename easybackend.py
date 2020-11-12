@@ -33,8 +33,10 @@ def index():
                 ]   
             else:
                 messages =[
+                    {
                     'type':'text',
                     'text':text
+                    }
                 ] 
             
         elif messageType == 'sticker':
