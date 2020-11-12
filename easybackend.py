@@ -18,6 +18,7 @@ def index():
         if messageType == 'text':
             text = message.get('message').get('text')
             print('text:',text)
+            
             fist =['剪刀','石頭','布']
             if text in fist:
                 messages=FistGame(text)
@@ -36,8 +37,8 @@ def index():
                             "stickerId": "1"
                         }
                     ]
-        ReplyMessage(replyToken,messages)
-
+        if message:
+            ReplyMessage(replyToken,messages)
         return "post"
     if request.method == 'GET':
         return "get"
