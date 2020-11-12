@@ -35,7 +35,27 @@ def index():
                     'type':'text',
                     'text':'googleNews'
                     }
-                ]   
+                ]
+            elif text == 'flex':
+                messages =[
+                    {
+                        "type": "flex",
+                        "altText": "this is a flex message",
+                        "contents": {
+                        "type": "carousel",
+                        "contents": [
+                            {
+                                "type": "bubble",
+                                "hero": {
+                                    "type": "image",
+                                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png",
+                                    "size": "full",
+                                    "aspectRatio": "20:13",
+                                    "aspectMode": "cover"
+                                }
+                            }
+                        ]
+                    }}]   
             else:
                 messages =[
                     {
