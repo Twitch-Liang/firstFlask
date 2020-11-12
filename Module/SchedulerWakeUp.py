@@ -1,5 +1,4 @@
 from apscheduler.schedulers.background import BackgroundScheduler
-from apscheduler.triggers.interval import IntervalTrigger
 import requests
 
 def sensor():
@@ -9,11 +8,6 @@ def sensor():
 
 def SchedulerWakeUp():
   sched = BackgroundScheduler(daemon=True)
-  interval = IntervalTrigger(
-        seconds = 5,
-        start_date='2020-11-12 00:00:00',
-        end_date='2099-12-31 23:59:59',
-        timezone='Asia/Shanghai')
-  sched.add_job(sensor,trigger=interval)
+  sched.add_job(sensor,'cron',day_of_week='*', hour='*', minute='*', second='0,10,20,30,40,50,60')
   sched.start()
   return ''
