@@ -25,10 +25,17 @@ def index():
                 messages=FistGame(text)
                 
             elif text == 'news' :
-                messages ='googleNews'
-                
+                messages =[
+                    {
+                    'type':'text',
+                    'text':'googleNews'
+                    }
+                ]   
             else:
-                messages = text
+                messages =[
+                    'type':'text',
+                    'text':text
+                ] 
             
         elif messageType == 'sticker':
             messages =[
