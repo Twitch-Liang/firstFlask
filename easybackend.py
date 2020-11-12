@@ -2,6 +2,7 @@ from flask import Flask,request
 from bs4 import BeautifulSoup
 from Module.ReplyMessage import ReplyMessage
 from Module.FistGame import FistGame
+import requests
 
 
 app = Flask(__name__)    
