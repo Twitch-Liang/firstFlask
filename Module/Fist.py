@@ -2,6 +2,8 @@ import random
 
 
 def Fist(text):
+  fist =['剪刀','石頭','布']
+  if text in fist:
     ai = random.randint(0,2)
     player = fist.index(text)
     if ai == player:
