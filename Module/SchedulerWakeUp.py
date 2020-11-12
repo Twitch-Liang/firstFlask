@@ -6,6 +6,6 @@ def print_text():
 
 def SchedulerWakeUp():
   sched = BackgroundScheduler(daemon=True)
-  sched.add_job(print_text,'interval',seconds=1)
+  sched.add_job(print_text,'interval',seconds=10)
   sched.start()
   return ''
