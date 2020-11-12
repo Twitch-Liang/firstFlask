@@ -68,7 +68,10 @@ def index():
             'Content-Type':'application/json',
             'Authorization':'Bearer '+accessToken
         }
-        data = replyMessage
+        data = {
+            "replyToken":replyToken,
+            "messages":replyMessage
+        }
         url = 'https://api.line.me/v2/bot/message/reply'
         r = requests.post(url,headers=headers,data=json.dumps(data))
 
