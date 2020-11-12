@@ -39,23 +39,88 @@ def index():
             elif text == 'flex':
                 messages =[
                     {
-                        "type": "flex",
-                        "altText": "this is a flex message",
-                        "contents": {
-                        "type": "carousel",
-                        "contents": [
-                            {
-                                "type": "bubble",
-                                "hero": {
-                                    "type": "image",
-                                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png",
-                                    "size": "full",
-                                    "aspectRatio": "20:13",
-                                    "aspectMode": "cover"
-                                }
-                            }
-                        ]
-                    }}]   
+  "type": "flex",
+  "altText": "this is a flex message",
+  "contents": {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Arm Chair, White",
+            "weight": "bold",
+            "size": "xl",
+            "wrap": True,
+            "contents": []
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "text": "$49",
+                "weight": "bold",
+                "size": "xl",
+                "flex": 0,
+                "wrap": True,
+                "contents": []
+              },
+              {
+                "type": "text",
+                "text": ".99",
+                "weight": "bold",
+                "size": "sm",
+                "flex": 0,
+                "wrap": True,
+                "contents": []
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "Add to Cart",
+              "uri": "https://linecorp.com"
+            },
+            "style": "primary"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "Add to wishlist",
+              "uri": "https://linecorp.com"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+}
+                ]
             else:
                 messages =[
                     {
