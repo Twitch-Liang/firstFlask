@@ -2,10 +2,15 @@ from flask import Flask,request
 from bs4 import BeautifulSoup
 from Module.ReplyMessage import ReplyMessage
 from Module.FistGame import FistGame
+from Module.SchedulerWakeUp import SchedulerWakeUp
 import requests
 
 
-app = Flask(__name__)    
+SchedulerWakeUp()
+
+app = Flask(__name__)
+
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
