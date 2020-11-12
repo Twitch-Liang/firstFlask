@@ -1,6 +1,6 @@
 from flask import Flask,request
 from bs4 import BeautifulSoup
-from Module.replyMessage import ReplyMessage
+from Module.ReplyMessage import ReplyMessage
 import requests
 import json
 import random
