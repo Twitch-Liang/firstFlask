@@ -4,7 +4,7 @@ import requests
 
 def sensor():
   r = requests.get('https://sleepy-dawn-70030.herokuapp.com/')
-  print(r)
+  print(r.text)
     
 
 def SchedulerWakeUp():
@@ -12,7 +12,7 @@ def SchedulerWakeUp():
   interval = IntervalTrigger(
         seconds = 5,
         start_date='2020-11-12 00:00:00',
-        end_date='2999-12-31 23:59:59',
+        end_date='2099-12-31 23:59:59',
         timezone='Asia/Shanghai')
   sched.add_job(sensor,trigger=interval)
   sched.start()
