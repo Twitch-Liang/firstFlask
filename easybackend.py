@@ -1,8 +1,8 @@
 from flask import Flask,request
 from bs4 import BeautifulSoup
 from Module.ReplyMessage import ReplyMessage
-from Module.Fist import Fist
-import random
+from Module.FistGame import FistGame
+
 
 app = Flask(__name__)    
 
@@ -13,14 +13,14 @@ def index():
         print(message) 
         replyToken = message.get('replyToken')      
         print('replyToken:',replyToken)
+
         messageType =message.get('message').get('type')
         if messageType == 'text':
             text = message.get('message').get('text')
             print('text:',text)
             fist =['剪刀','石頭','布']
             if text in fist:
-                Fist(text)
-
+                messages=FistGame(text)
                 
             elif text == 'news' :
                 messages ='googleNews'
@@ -36,8 +36,6 @@ def index():
                             "stickerId": "1"
                         }
                     ]
-
-
         ReplyMessage(replyToken,messages)
 
         return "post"
