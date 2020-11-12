@@ -1,5 +1,5 @@
 from apscheduler.schedulers.background import BackgroundScheduler
-from datetime import date
+from datetime import datetime
 
 def print_text():
   print('Waken!')
