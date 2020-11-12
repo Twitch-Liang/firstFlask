@@ -14,39 +14,52 @@ def index():
         replyToken = message.get('replyToken')      
         print('replyToken:',replyToken)
         messageType =message.get('message').get('type')
-        replyData={
-            "replyToken":replyToken,
-            "messages":[
-                {
-                "type": messageType,
-                }
-            ]
-        }
         if messageType == 'text':
-
             text = message.get('message').get('text')
+            print('text:'text)
             fist =['剪刀','石頭','布']
             if text in fist:
                 ai = random.randint(0,2)
                 player = fist.index(text)
                 if ai == player:
-                    replyMessage='電腦出'+fist[ai]+'，平手'
+                    replyMessage=[
+                        {
+                            'type':'text',
+                            'text':'電腦出'+fist[ai]+'，平手'
+                        }
+                    ]
                 
                 elif (ai == 0 and player == 1) or (ai == 1 and player == 2) or (ai == 2 and player ==0):
-                    replyMessage='電腦出'+fist[ai]+'，您贏了！'
+                    replyMessage=[
+                        {
+                            'type':'text',
+                            'text':'電腦出'+fist[ai]+'，您贏了！'
+                        }
+                    
                 
                 else:
-                    replyMessage='電腦出'+fist[ai]+'，電腦獲勝！'
+                    replyMessage=[
+                        {
+                            'type':'text',
+                            'text':'電腦出'+fist[ai]+'，電腦獲勝！'
+                        }
+                    ]
                 
             elif text == 'news' :
                 replyMessage ='googleNews'
                 
             else:
                 replyMessage = text
-            replyData['messages'][0]['text'] = replyMessage
+            
         elif messageType == 'sticker':
-            replyData['messages'][0]["packageId"]='1'
-            replyData['messages'][0]["stickerId"]='1'
+            replyMessage =[
+                        {
+                            'type':'sticker',
+                            "packageId": "1",
+                            "stickerId": "1"
+                        }
+                    ]
+
 
 
         ####################################################
@@ -57,7 +70,7 @@ def index():
             'Content-Type':'application/json',
             'Authorization':'Bearer '+accessToken
         }
-        data = replyData
+        data = replyMessage
         url = 'https://api.line.me/v2/bot/message/reply'
         r = requests.post(url,headers=headers,data=json.dumps(data))
 
