@@ -106,8 +106,8 @@ def index():
                         }
                     }
                 ]
-            elif text == 'rent591':
-                messages =[Rent591()]
+            elif text.index('rent591'):
+                messages =Rent591(text)
             else:
                 messages =[
                     {
