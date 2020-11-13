@@ -74,7 +74,6 @@ def index():
                                 "type": "text",
                                 "text": "Body",
                                 "align": "center",
-                                "wrap": True,
                                 "contents": [
                                 {
                                     "type": "span",
@@ -87,7 +86,6 @@ def index():
                                 "type": "text",
                                 "text": "Body",
                                 "align": "center",
-                                "wrap": True,
                                 "contents": [
                                 {
                                     "type": "span",
