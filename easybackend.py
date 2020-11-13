@@ -43,6 +43,7 @@ def index():
                         'altText':'flex text of introduce myself',
                         'contents':{
                             'type':'bubble',
+                            'direction': 'ltr',
                             'header':{
                                 'type':'box',
                                 'layout':'vertical',
@@ -60,8 +61,8 @@ def index():
                             'hero':{
                                 'type':'image',
                                 'url':'https://www.vjgamer.com.hk/wp-content/uploads/2019/03/22/52331/40452668763_42996d9575_o-900x900.jpg',
-                                'size':'full',
-                                'aspectRatio':'1.5:1',
+                                'size':'cover',
+                                'aspectRatio':'1.51:1',
                                 'aspectMode':'fit'
                             },
                             'body':{
@@ -81,20 +82,20 @@ def index():
                                     }
                                 ]
                             },
-                            # 'footer':{
-                            #     'type':'box',
-                            #     'layout':'horizontal',
-                            #     'contents':[
-                            #         {
-                            #             'type':'button',
-                            #             'action':{
-                            #                 'type':'uri',
-                            #                 'label':'button',
-                            #                 'uri':''
-                            #             }
-                            #         }
-                            #     ]
-                            # }
+                            'footer':{
+                                'type':'box',
+                                'layout':'horizontal',
+                                'contents':[
+                                    {
+                                        'type':'button',
+                                        'action':{
+                                            'type':'uri',
+                                            'label':'button',
+                                            'uri':''
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     }
                 ]

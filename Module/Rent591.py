@@ -10,6 +10,8 @@ soup=BeautifulSoup(r.text,'html.parser')
 houseCards=soup.select('.listInfo')
 
 for houseInfo in houseCards:
-  imageUrl=houseInfo.select('.imageBox img')[0].get('data-original')
-  titleA=houseInfo.select('.infoContent h3 a')
+  imageUrl = houseInfo.select('.imageBox img')[0].get('data-original')
+  titleArea = houseInfo.select('.infoContent h3 a')[0]
+  title = titleArea.text
+  infoUrl = 'https:'+titleArea.get('herf')
   print(imageUrl,'\n')
