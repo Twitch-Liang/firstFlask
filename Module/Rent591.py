@@ -11,4 +11,5 @@ houseCards=soup.select('.listInfo')
 
 for houseInfo in houseCards:
   imageUrl=houseInfo.select('.imageBox img')[0].get('data-original')
+  titleA=houseInfo.select('.infoContent h3 a')
   print(imageUrl,'\n')

@@ -81,20 +81,20 @@ def index():
                                     }
                                 ]
                             },
-                            'footer':{
-                                'type':'box',
-                                'layout':'horizontal',
-                                'contents':[
-                                    {
-                                        'type':'button',
-                                        'action':{
-                                            'type':'uri',
-                                            'label':'button',
-                                            'uri':''
-                                        }
-                                    }
-                                ]
-                            }
+                            # 'footer':{
+                            #     'type':'box',
+                            #     'layout':'horizontal',
+                            #     'contents':[
+                            #         {
+                            #             'type':'button',
+                            #             'action':{
+                            #                 'type':'uri',
+                            #                 'label':'button',
+                            #                 'uri':''
+                            #             }
+                            #         }
+                            #     ]
+                            # }
                         }
                     }
                 ]
