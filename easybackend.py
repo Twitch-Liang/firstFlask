@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from Module.ReplyMessage import ReplyMessage
 from Module.FistGame import FistGame
 from Module.SchedulerWakeUp import SchedulerWakeUp
+from Module.Rent591 import  Rent591
 import requests
 
 
@@ -105,6 +106,8 @@ def index():
                         }
                     }
                 ]
+            elif text == 'rent591':
+                message=Rent591()
             else:
                 messages =[
                     {
