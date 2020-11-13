@@ -64,7 +64,7 @@ def Rent591():
       break
     count+=1
 
-  flexBox:{
+  flexBox={
     "type": "flex",
     "altText": "Flex message of 591rent",
     "contents": carousel
