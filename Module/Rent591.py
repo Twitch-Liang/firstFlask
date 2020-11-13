@@ -33,7 +33,6 @@ for houseInfo in houseCards:
             "type": "text",
             "text": title ,
             "align": "center",
-            'warp': True,
             "contents": []
           }
         ]
@@ -41,7 +40,7 @@ for houseInfo in houseCards:
       "hero": {
         "type": "image",
         "url": imageUrl ,
-        "size": "cover",
+        "size": "full",
         "aspectRatio": "1.51:1"
       },
       "footer": {
