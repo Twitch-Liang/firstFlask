@@ -81,6 +81,14 @@ def index():
                                     "text": "hello, world",
                                     'align':'center'
                                 },
+                                ]
+                            },
+                            {
+                                "type": "text",
+                                "text": "Body",
+                                "align": "center",
+                                "wrap": True,
+                                "contents": [
                                 {
                                     "type": "span",
                                     "text": "I'm brun in 2020/11/10",
