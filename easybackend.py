@@ -74,23 +74,15 @@ def index():
                                 "type": "text",
                                 "text": "Body",
                                 "align": "center",
+                                "wrap": True,
                                 "contents": [
                                 {
                                     "type": "span",
-                                    "text": "hello, world",
-                                    'align':'center'
+                                    "text": "hello, world"
                                 },
-                                ]
-                            },
-                            {
-                                "type": "text",
-                                "text": "Body",
-                                "align": "center",
-                                "contents": [
                                 {
                                     "type": "span",
-                                    "text": "I'm brun in 2020/11/10",
-                                    'align':'center'
+                                    "text": "I'm brun in 2020/11/10"
                                 }
                                 ]
                             }
