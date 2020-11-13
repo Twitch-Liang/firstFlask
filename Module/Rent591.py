@@ -69,10 +69,9 @@ def Rent591():
     "altText": "Flex message of 591rent",
     "contents": carousel
   }
-
-  jsonData=json.dumps(carousel,ensure_ascii=False)
-  f=open('rent.json',"w",encoding='utf-8')
-  f.write(jsonData)
-  f.close()
+  # jsonData=json.dumps(carousel,ensure_ascii=False)
+  # f=open('rent.json',"w",encoding='utf-8')
+  # f.write(jsonData)
+  # f.close()
 
   return flexBox

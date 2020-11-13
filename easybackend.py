@@ -107,7 +107,7 @@ def index():
                     }
                 ]
             elif text == 'rent591':
-                message =[
+                messages =[
                     Rent591()
                 ]
             else:
