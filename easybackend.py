@@ -109,7 +109,8 @@ def index():
             elif text.find('rent591') != -1 :
                 messages =Rent591(text)
             elif text == 'testFlex':
-                messages ={
+                messages =[
+                    {
   "type": "flex",
   "altText": "this is a flex message",
   "contents": {
@@ -186,6 +187,7 @@ def index():
   }
 }
 }
+                ]
             
             else:
                 messages =[
