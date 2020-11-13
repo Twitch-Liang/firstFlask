@@ -78,13 +78,11 @@ def index():
                                 "contents": [
                                 {
                                     "type": "span",
-                                    "text": "hello, world",
-                                    'flex': 1
+                                    "text": "hello, world"
                                 },
                                 {
                                     "type": "span",
-                                    "text": "I'm brun in 2020/11/10",
-                                    'flex': 2
+                                    "text": "I'm brun in 2020/11/10"
                                 }
                                 ]
                             }
