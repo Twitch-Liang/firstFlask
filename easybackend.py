@@ -106,7 +106,7 @@ def index():
                         }
                     }
                 ]
-            elif text.index('rent591'):
+            elif text.find('rent591') != -1 :
                 messages =Rent591(text)
             else:
                 messages =[
