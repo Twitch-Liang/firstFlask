@@ -61,7 +61,7 @@ def index():
                             'hero':{
                                 'type':'image',
                                 'url':'https://www.vjgamer.com.hk/wp-content/uploads/2019/03/22/52331/40452668763_42996d9575_o-900x900.jpg',
-                                'size':'cover',
+                                'size':'full',
                                 'aspectRatio':'1.5:1',
                                 'aspectMode':'fit'
                             },
@@ -77,7 +77,7 @@ def index():
                                             {
                                                 "type": "span",
                                                 "text": "I was born on 2020/11/10!"
-                                            },
+                                            }
                                         ]
                                     }
                                 ]
