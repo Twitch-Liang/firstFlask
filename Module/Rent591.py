@@ -8,9 +8,11 @@ def Rent591(text):
   cityId= {'台北市': '1','基隆市': '2','新北市': '3','新竹市': '4','新竹縣': '5','桃園市': '6','苗栗縣': '7','台中市': '8','彰化縣': '10','南投縣': '11','嘉義市': '12','嘉義縣': '13','雲林縣': '14','台南市': '15','高雄市': '17','屏東縣': '19','宜蘭縣': '21','花蓮縣': '23','台東縣': '22','金門縣': '25','澎湖縣': '24','連江縣': '26'}
   
   if cityId.get(cityName) != None:
-  
+    cookies={
+      'urlJumpIp':cityId.get(cityName)
+    }
     url='https://rent.591.com.tw/?kind=0&region='+cityId.get(cityName)
-    r= requests.get(url)
+    r= requests.get(url,cookies=cookies)
 
     soup=BeautifulSoup(r.text,'html.parser')
 
