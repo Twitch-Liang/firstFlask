@@ -43,7 +43,6 @@ def index():
                         'altText':'flex text of introduce myself',
                         'contents':{
                             'type':'bubble',
-                            'direction':'ltr',
                             'header':{
                                 'type':'box',
                                 'layout':'vertical',
