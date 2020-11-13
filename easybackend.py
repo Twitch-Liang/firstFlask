@@ -42,60 +42,66 @@ def index():
                         'type':'flex',
                         'altText':'flex text of introduce myself',
                         'contents':{
-                            'type':'bubble',
-                            'direction': 'ltr',
-                            'header':{
-                                'type':'box',
-                                'layout':'vertical',
-                                'contents':[
-                                    {
-                                        'type':'text',
-                                        'text':'hello world~',
-                                        'size':'xl',
-                                        'color':'#15D573FF',
-                                        'align':'center',
-                                        'contents':[]
-                                    }
-                                ]
-                            },
-                            'hero':{
-                                'type':'image',
-                                'url':'https://www.vjgamer.com.hk/wp-content/uploads/2019/03/22/52331/40452668763_42996d9575_o-900x900.jpg',
-                                'size':'cover',
-                                'aspectRatio':'1.51:1',
-                                'aspectMode':'fit'
-                            },
-                            'body':{
-                                'type':'box',
-                                'layout':'vertical',
-                                'contents':[
-                                    {
-                                        'type':'text',
-                                        'text':'My name is Little_Twitch~',
-                                        'align':'center',
-                                        'contents':[
-                                            {
-                                                "type": "span",
-                                                "text": "I was born on 2020/11/10!"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            'footer':{
-                                'type':'box',
-                                'layout':'horizontal',
-                                'contents':[
-                                    {
-                                        'type':'button',
-                                        'action':{
-                                            'type':'uri',
-                                            'label':'button',
-                                            'uri':''
-                                        }
-                                    }
+                        "type": "bubble",
+                        "direction": "ltr",
+                        "header": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                            {
+                                "type": "text",
+                                "text": "hello world~",
+                                "size": "xl",
+                                "color": "#15D573FF",
+                                "align": "center",
+                                "gravity": "center",
+                                "contents": []
+                            }
+                            ]
+                        },
+                        "hero": {
+                            "type": "image",
+                            "url": "https://www.vjgamer.com.hk/wp-content/uploads/2019/03/22/52331/40452668763_42996d9575_o-900x900.jpg",
+                            "size": "full",
+                            "aspectRatio": "1.5:1",
+                            "aspectMode": "cover"
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                            {
+                                "type": "text",
+                                "text": "Body",
+                                "align": "center",
+                                "wrap": True,
+                                "contents": [
+                                {
+                                    "type": "span",
+                                    "text": "hello, world"
+                                },
+                                {
+                                    "type": "span",
+                                    "text": "I'm brun in 2020/11/10"
+                                }
                                 ]
                             }
+                            ]
+                        },
+                        "footer": {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                            {
+                                "type": "button",
+                                "action": {
+                                "type": "uri",
+                                "label": "Button",
+                                "uri": "https://linecorp.com"
+                                }
+                            }
+                            ]
+                        }
                         }
                     }
                 ]
