@@ -10,7 +10,7 @@ def Rent591(text):
   if len(textSplit) == 2:
     cityName = textSplit[1].replace('臺','台')
   else:
-    cityName=random.choice(list(cityId.values()))
+    cityName=random.choice(list(cityId.keys()))
   
   
   if cityId.get(cityName) != None:
