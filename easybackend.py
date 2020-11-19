@@ -87,7 +87,7 @@ def index():
                      messages =[
                         {
                         'type':'text',
-                        'text': f'對不起！我沒找到與{name}相關的資料'
+                        'text': f'對不起！我沒找到與{query}相關的資料'
                         }
                     ]
 
