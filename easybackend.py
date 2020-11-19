@@ -1,5 +1,6 @@
 from flask import request
 from flask_sqlalchemy import SQLAlchemy
+from flask_restful import reqparse, Resource
 from flask import Flask
 from bs4 import BeautifulSoup
 from datetime import time
@@ -72,10 +73,10 @@ def index():
             
             elif text.find('球員 ') != -1:
                 name = text.split(' ',1)[1]
-                # print(time.now)
-                # query = str(PlayersModel.query.filter_by(name=name).first())
-                # print(time.now)
-                query = PlayersModel.query.filter(PlayersModel.name.like("%" + name + "%")).all()
+                print(time.now)
+                query = str(PlayersModel.query.filter_by(name=name).first())
+                print(time.now)
+                # query = PlayersModel.query.filter(PlayersModel.name.like("%" + name + "%")).all()
                 messages =[
                     {
                     'type':'text',
