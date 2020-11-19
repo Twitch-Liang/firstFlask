@@ -20,8 +20,9 @@ db = SQLAlchemy()
 
 app = Flask(__name__)
 
+URL=os.environ.get('DATABASE_URL', None)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://rxtfpqtoiybpuv:6ab1c87f71ee64a09d7dc3700d8fcd0fb12eb0453302a75f8a22df1ffb971012@ec2-52-44-235-121.compute-1.amazonaws.com:5432/d5omf0mtm23h0b"
+app.config['SQLALCHEMY_DATABASE_URI'] = URL
 
 class PlayersModel(db.Model):
     __tablename__ = 'players'
