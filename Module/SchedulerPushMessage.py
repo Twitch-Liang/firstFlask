@@ -23,9 +23,9 @@ def SchedulerPushMessage():
   r = requests.post(url,headers=headers,data=json.dumps(data))
   
 
-def SchedulerWakeUp():
-  sched = BackgroundScheduler(daemon=True)
-  sched.add_job(SchedulerPushMessage,'cron',day_of_week='0-6', hour='0-23', minute='0-59', second='0',start_date='2020-11-12')
-  sched.start()
-  atexit.register(lambda: sched.shutdown())
+def SchedulerSendPost():
+  Scheduler = BackgroundScheduler(daemon=True)
+  Scheduler.add_job(SchedulerPushMessage,'cron',day_of_week='0-6', hour='0-23', minute='0-59', second='0',start_date='2020-11-12')
+  Scheduler.start()
+  atexit.register(lambda: Scheduler.shutdown())
   return ''
