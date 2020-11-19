@@ -72,10 +72,10 @@ def index():
             
             elif text.find('球員/') != -1:
                 name = text.split('/')[1]
-                print(time.now)
+                # print(time.now)
                 query = PlayersModel.query.filter_by(name=name).first()
-                print(time.now)
-                # query = PlayersModel.query.filter(PlayersModel.name.like("%" + name + "%")).all()
+                # print(time.now)
+                # query = PlayersModel.query.filter(PlayersModel.name.ilike("%" + name + "%")).all()
                 messages =[
                     {
                     'type':'text',
