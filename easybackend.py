@@ -47,20 +47,6 @@ def index():
                 messages=FistGame(text)
             
             elif text.find('球員/') != -1:
-                SearchNBAPlayer(text)
-
-            elif text == 'news' :
-                messages =[
-                    {
-                    'type':'text',
-                    'text':'googleNews'
-                    }
-                ]
-            elif text == 'selfIntroduction':
-                messages =[
-                    
-                ]
-            elif text.find('rent591') != -1 :
                 name = text.split('/')[1]
                 # print(time.now)
                 # query = PlayersModel.query.filter_by(name=name).first()
@@ -80,6 +66,20 @@ def index():
                     'text': f'對不起！我沒找到與{name}相關的資料QxQ'
                     }
                 ]
+
+            elif text == 'news' :
+                messages =[
+                    {
+                    'type':'text',
+                    'text':'googleNews'
+                    }
+                ]
+            elif text == 'selfIntroduction':
+                messages =[
+                    
+                ]
+            elif text.find('rent591') != -1 :
+                messages =Rent591(text)
 
             else:
                 messages =[
@@ -105,7 +105,7 @@ def index():
 
 @app.route('/push')
 def push():
-    messages =[
+     messages =[
         {
         'type':'text',
         'text':'安安安安 測試測試'
