@@ -73,7 +73,7 @@ def index():
             elif text.find('球員/') != -1:
                 name = text.split('/')[1]
                 # print(time.now)
-                query = PlayersModel.query.filter_by(name=name).first()
+                query = str(PlayersModel.query.filter_by(name=name).first())
                 # print(time.now)
                 messages =[
                     {
