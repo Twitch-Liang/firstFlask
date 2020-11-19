@@ -2,7 +2,17 @@ from flask_sqlalchemy import SQLAlchemy
 from Models import PlayersModel
 from flask import Flask
 from flask import request
+
 db = SQLAlchemy()
+
+app = Flask(__name__)
+
+URL=os.environ.get('DATABASE_URL', None)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = URL
+
+
+db.init_app(app)
 
 def SearchNBAPlayer(text):
   name = text.split('/')[1]
