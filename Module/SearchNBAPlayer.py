@@ -2,6 +2,8 @@ from flask_sqlalchemy import SQLAlchemy
 from Models import PlayersModel
 from flask import Flask
 
+db = SQLAlchemy()
+
 def SearchNBAPlayer(text):
   name = text.split('/')[1]
   # print(time.now)
