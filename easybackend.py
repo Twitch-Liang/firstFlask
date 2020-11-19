@@ -1,4 +1,6 @@
-from flask import Flask,request
+from flask import request
+from flask_sqlalchemy import SQLAlchemy
+from flask import Flask
 from bs4 import BeautifulSoup
 from Module.ReplyMessage import ReplyMessage
 from Module.FistGame import FistGame
@@ -7,9 +9,17 @@ from Module.Rent591 import  Rent591
 import requests
 
 
+
 SchedulerWakeUp()
 
+db = SQLAlchemy()
+
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://rxtfpqtoiybpuv:6ab1c87f71ee64a09d7dc3700d8fcd0fb12eb0453302a75f8a22df1ffb971012@ec2-52-44-235-121.compute-1.amazonaws.com:5432/d5omf0mtm23h0b"
+
+db.init_app(app)
 
 
 
