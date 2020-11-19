@@ -15,7 +15,7 @@ from Module.SchedulerWakeUp import SchedulerWakeUp
 from Module.Rent591 import  Rent591
 from Module.SchedulerPushMessage import SchedulerSendPost
 
-# SchedulerSendPost()
+SchedulerSendPost()
 SchedulerWakeUp()
 
 db = SQLAlchemy()
