@@ -3,9 +3,9 @@ import requests
 import atexit
 import os
 
-
+url=os.environ.get('MYURL',None)
 def sensor():
-  r = os.environ.get('MYURL',None)
+  r = requests.get(url)
   print(r.text)
     
 
