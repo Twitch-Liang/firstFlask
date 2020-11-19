@@ -1,10 +1,11 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 import requests
 import atexit
+import os
 
 
 def sensor():
-  r = requests.get('https://sleepy-dawn-70030.herokuapp.com/')
+  r = os.environ.get('MYURL',None)
   print(r.text)
     
 
