@@ -21,7 +21,7 @@ def SchedulerPushMessage():
   }
   url = 'https://api.line.me/v2/bot/message/push'
   r = requests.post(url,headers=headers,data=json.dumps(data))
-  return r
+  
 
 def SchedulerWakeUp():
   sched = BackgroundScheduler(daemon=True)
