@@ -1,6 +1,5 @@
 from flask import request
 from flask_sqlalchemy import SQLAlchemy
-from flask_restful import reqparse, Resource
 from flask import Flask
 from bs4 import BeautifulSoup
 from datetime import time
