@@ -75,7 +75,7 @@ def index():
                 # print(time.now)
                 # query = PlayersModel.query.filter_by(name=name).first()
                 # print(time.now)
-                query = PlayersModel.query.filter(PlayersModel.name.ilike("%" + name + "%")).all()
+                query = PlayersModel.query.filter(PlayersModel.name.ilike("%" + name + "%")).first()
                 if query != None:
                     messages =[
                         {
