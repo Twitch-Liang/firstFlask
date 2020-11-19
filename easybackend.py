@@ -105,7 +105,7 @@ def index():
 
 @app.route('/push')
 def push():
-     messages =[
+    messages =[
         {
         'type':'text',
         'text':'安安安安 測試測試'
