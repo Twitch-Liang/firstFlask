@@ -13,6 +13,7 @@ from Module.PushMessage import PushMessage
 from Module.FistGame import FistGame
 from Module.SchedulerWakeUp import SchedulerWakeUp
 from Module.Rent591 import  Rent591
+from Module.SchedulerPushMessage import SchedulerPushMessage
 
 
 SchedulerWakeUp()
