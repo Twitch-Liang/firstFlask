@@ -11,6 +11,7 @@ from Models.PlayersModel import PlayersModel
 
 from Module.SearchNBAPlayer import SearchNBAPlayer
 from Module.ReplyMessage import ReplyMessage
+from Module.PushMessage import PushMessage
 from Module.FistGame import FistGame
 from Module.SchedulerWakeUp import SchedulerWakeUp
 from Module.Rent591 import  Rent591
@@ -85,6 +86,17 @@ def index():
         return "post"
     if request.method == 'GET':
         return "I'm awake~"
+
+@app.route('/push')
+def push():
+    messages =[
+        {
+        'type':'text',
+        'text':'安安安安 測試測試'
+        }
+            ]
+    PushMessage(messages)
+    return 'OK'
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1',port=5000,debug=False,use_reloader=False)
