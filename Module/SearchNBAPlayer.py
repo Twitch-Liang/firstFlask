@@ -1,7 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from Models import PlayersModel
 from flask import Flask
-
+from flask import request
 db = SQLAlchemy()
 
 def SearchNBAPlayer(text):
