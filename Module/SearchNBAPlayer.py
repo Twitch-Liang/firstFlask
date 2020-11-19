@@ -2,7 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 from Models import PlayersModel
 from flask import Flask
 from flask import request
-
+import os
 db = SQLAlchemy()
 
 app = Flask(__name__)
