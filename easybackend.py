@@ -72,9 +72,9 @@ def index():
             
             elif text.find('球員/') != -1:
                 name = text.split('/')[1]
-                print(datetime.strftime(time.now))
+                # print(datetime.strftime(time.now))
                 query = PlayersModel.query.filter_by(name=name).first()
-                print(datetime.strftime(time.now))
+                # print(datetime.strftime(time.now))
 
             elif text == 'news' :
                 messages =[
