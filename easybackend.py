@@ -71,10 +71,10 @@ def index():
             if text in fist:
                 messages=FistGame(text)
             
-            elif text.find('球員 ') != -1:
-                name = text.split(' ',1)[1]
+            elif text.find('球員/') != -1:
+                name = text.split('/')[1]
                 print(time.now)
-                query = str(PlayersModel.query.filter_by(name=name).first())
+                query = PlayersModel.query.filter_by(name=name).first()
                 print(time.now)
                 # query = PlayersModel.query.filter(PlayersModel.name.like("%" + name + "%")).all()
                 messages =[
