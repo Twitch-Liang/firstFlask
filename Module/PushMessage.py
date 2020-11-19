@@ -10,7 +10,7 @@ def PushMessage(messages):
       'Authorization':'Bearer '+accessToken
   }
   data = {
-      "to": ['Ua4d13e2b37c906baf6bf772d2b213aab'],
+      "to": 'Ua4d13e2b37c906baf6bf772d2b213aab',
       "messages":messages
   }
   url = 'https://api.line.me/v2/bot/message/push'
