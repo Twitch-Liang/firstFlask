@@ -75,7 +75,7 @@ def index():
                 # print(time.now)
                 # query = str(PlayersModel.query.filter_by(name=name).first())
                 # print(time.now)
-                query = PlayersModel.query.filter(PlayersModel.name.like("%"name"%") if name is not None else "").all()
+                query = PlayersModel.query.filter(PlayersModel.name.like("%" + key_name + "%") if key_name is not None else "").all()
                 messages =[
                     {
                     'type':'text',
