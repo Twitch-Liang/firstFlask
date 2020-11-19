@@ -79,7 +79,7 @@ def index():
                 messages =[
                     {
                     'type':'text',
-                    'text':str(query)
+                    'text':str(query.all)
                     }
                 ]
 
