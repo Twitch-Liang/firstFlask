@@ -1,3 +1,4 @@
+from flask_sqlalchemy import SQLAlchemy
 from Models import PlayersModel
 
 def SearchNBAPlayer(text):
