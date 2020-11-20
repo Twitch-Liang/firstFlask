@@ -3,8 +3,9 @@ import requests
 import json
 import os
 
-url=os.environ.get('MYURL',None)
+
 def sensor():
+  url=os.environ.get('MYURL',None)
   r = requests.get(url)
   print(r.text)
 
@@ -31,7 +32,7 @@ def SchedulerPushMessage():
 
 def SchedulerWakeUp():
   sched = BackgroundScheduler(daemon=True)
-  sched.add_job(sensor,'cron',day_of_week='0-6', hour='0-23', minute='0,10,20,30,40,50', second='0',start_date='2020-11-12',timezone='Asia/Taipei')
+  sched.add_job(sensor,'cron',day_of_week='0-6', hour='0-23', minute='0-59', second='0',start_date='2020-11-12',timezone='Asia/Taipei')
   sched.add_job(SchedulerPushMessage,'cron',day_of_week='0-6', hour='10', minute='0', second='0',start_date='2020-11-12',timezone='Asia/Taipei')
   sched.start()
   return ''
