@@ -1,6 +1,8 @@
 from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
+from flask_mail import Mail
+from flask_mail import Message
 from bs4 import BeautifulSoup
 from datetime import time
 import requests
@@ -16,6 +18,9 @@ from Module.Rent591 import  Rent591
 
 SchedulerWakeUp()
 
+
+
+
 db = SQLAlchemy()
 
 app = Flask(__name__)
@@ -25,7 +30,43 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = URL
 
 
+
+app.config.update(
+    #  hotmail的設置
+    MAIL_SERVER='smtp.office365.com',
+    MAIL_PROT=587,
+    MAIL_USE_TLS=True,
+    MAIL_USERNAME=os.environ.get('MAIL_USERNAME'),
+    MAIL_PASSWORD=os.environ.get('MAIL_PASSWORD') 
+)
+mail = Mail(app)
+
+
 db.init_app(app)
+
+@app.route("/send_mail")
+def SendMail():
+    #  主旨
+    msg_title = 'Hello It is Flask-Mail'
+    #  寄件者，若參數有設置就不需再另外設置
+    msg_sender = os.environ.get('MAIL_USERNAME')
+    #  收件者，格式為list，否則報錯
+    msg_recipients = ['rat800805@gmail.com']
+    #  郵件內容
+    msg_body = 'Hey, I am mail body!'
+    #  也可以使用html
+    #  msg_html = '<h1>Hey,Flask-mail Can Use HTML</h1>'
+    msg = Message(msg_title,
+                  sender=msg_sender,
+                  recipients=msg_recipients)
+    msg.body = msg_body
+    #  msg.html = msg_html
+    
+    #  mail.send:寄出郵件
+    mail.send(msg)
+    return 'You Send Mail by Flask-Mail Success!!'
+
+
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -114,4 +155,4 @@ def push():
     return 'OK'
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1',port=5000,debug=False,use_reloader=False)
+    app.run(host='127.0.0.1',port=5000,debug=True,use_reloader=False)
