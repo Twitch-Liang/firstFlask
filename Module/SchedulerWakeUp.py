@@ -19,7 +19,7 @@ def SchedulerPushMessage():
       "messages":[
         {
         'type':'text',
-        'text':'作業作業 測試測試'
+        'text':'作業作業 終於要成功了...嗎?'
         }
             ]
   }
@@ -31,7 +31,7 @@ def SchedulerPushMessage():
 
 def SchedulerWakeUp():
   sched = BackgroundScheduler(daemon=True)
-  sched.add_job(sensor,'cron',day_of_week='0-6', hour='0-23', minute='0,10,20,30,40,50', second='0',start_date='2020-11-12')
-  sched.add_job(SchedulerPushMessage,'cron',day_of_week='0-6', hour='9', minute='45', second='0',start_date='2020-11-12',timezone='Asia/shanghai')
+  sched.add_job(sensor,'cron',day_of_week='0-6', hour='0-23', minute='0,10,20,30,40,50', second='0',start_date='2020-11-12',timezone='Asia/shanghai')
+  sched.add_job(SchedulerPushMessage,'cron',day_of_week='0-6', hour='10', minute='0', second='0',start_date='2020-11-12',timezone='Asia/shanghai')
   sched.start()
   return ''
