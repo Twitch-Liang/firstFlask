@@ -21,11 +21,12 @@ def SchedulerPushMessage():
   }
   url = 'https://api.line.me/v2/bot/message/push'
   r = requests.post(url,headers=headers,data=json.dumps(data))
+  print(r)
   
 
 def SchedulerSendPost():
   Scheduler = BackgroundScheduler(daemon=True)
-  sched.add_job(sensor,'cron',day_of_week='0-6', hour='10', minute='0', second='0',start_date='2020-11-12',timezone='Asia/shanghai')
-  sched.start()
+  scheduler.add_job(sensor,'cron',day_of_week='0-6', hour='9', minute='23', second='0',start_date='2020-11-12',timezone='Asia/shanghai')
+  scheduler.start()
   atexit.register(lambda: Scheduler.shutdown())
   return ''
