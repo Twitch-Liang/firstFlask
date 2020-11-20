@@ -25,7 +25,7 @@ def SchedulerPushMessage():
   
 
 def SchedulerSendPost():
-  Scheduler = SchedulerSendPost(daemon=True)
+  Scheduler = SchedulerPushMessage(daemon=True)
   scheduler.add_job(SchedulerPushMessage,'cron',day_of_week='0-6', hour='9', minute='26', second='0',start_date='2020-11-12',timezone='Asia/shanghai')
   scheduler.start()
   atexit.register(lambda: Scheduler.shutdown())
