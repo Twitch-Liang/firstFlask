@@ -25,7 +25,7 @@ def SchedulerPushMessage():
 
 def SchedulerSendPost():
   Scheduler = BackgroundScheduler(daemon=True)
-  Scheduler.every().day.at("08:30").do()
+  Scheduler.every().day.at("08:35").do(SchedulerPushMessage)
   Scheduler.start()
   atexit.register(lambda: Scheduler.shutdown())
   return ''
